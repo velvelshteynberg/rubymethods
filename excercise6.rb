@@ -6,6 +6,6 @@ def converting_temperature (temperature_farenheight)
 end
 
 
-puts "What is the temperature in farenheight?"
+puts "What is the temperature in farenheight?" 
 temperature_farenheight = gets.chomp.to_i
 puts converting_temperature (temperature_farenheight)
