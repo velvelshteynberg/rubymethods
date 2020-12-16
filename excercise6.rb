@@ -2,7 +2,7 @@
 #excercise 6
 def converting_temperature (temperature_farenheight)
     celcius = (temperature_farenheight-32.0)*(5.0/9)
-    return celcius
+    return "your temperature in celcius is #{celcius}C!!!"
 end
 
 
