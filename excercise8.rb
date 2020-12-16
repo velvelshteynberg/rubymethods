@@ -1,35 +1,22 @@
-def distance_and_speed(time,length)
-    return "You travelled at a speed of #{first}/#{second} metres/second"
-
+def speed(person)
+  puts "How many metres did #{person} run?"
+  distance = gets.chomp.to_f
+  puts "How many minutes did it take #{person} to run #{distance} metres?"
+  time = (gets.chomp.to_f)*60
+  speed = distance/time
+  return speed
 end
 
-   puts "How many minutes did it take you user 1?"
-   user1_time = (gets.chomp.to_i)*60
-   puts "How many metres did you run?"
-   user1_length_metres = gets.chomp.to_i
-   puts distance_and_speed('user1_time','user1_length_metres')
+def judgement(speed1, speed2, speed3)
+  if speed1 > speed2 && speed1 > speed3
+    puts "#{speed1} is the fastest"
+  elsif speed2 > speed1 && speed2 > speed3
+    puts "#{speed2} is the fastest"
+  elsif speed3 > speed2 && speed3 > speed1
+    puts "#{speed3} is the fastest"
+  elsif speed1 == speed2 && speed1 == speed3
+    puts "all the speeds are the same"
+  end 
+end
 
-   puts "How many minutes did it take you user 2?"
-   user2_time = (gets.chomp.to_i)*60
-   puts "How many metres did you run?"
-   user2_length_metres = gets.chomp.to_i
-   puts distance_and_speed(user2_time, user2_length_metres)
-
-   puts "How many minutes did it take you user 3?"
-   user3_time = (gets.chomp.to_i)*60
-   puts "How many metres did you run?"
-   user3_length_metres = gets.chomp.to_i
-   puts distance_and_speed(user3_time, user3_length_metres)
-
-   if speed3 > speed2 && speed3 > speed1
-    puts "Person 3 was the fastest at #{speed3} m/s"
-  elsif speed2 > speed3 && speed2 > speed1
-    puts "Person 2 was the fastest at #{speed2} m/s"
-  elsif speed1 > speed3 && speed1 > speed2
-    puts "Person 1 was the fastest at #{speed1} m/s"
-  elsif speed1 == speed2 && speed2 == speed3
-    puts "Everyone tied at #{speed1} m/s"
-  else
-    puts "Well done everyone!"
-  end
-  
+judgement(speed(1), speed(2), speed(3))
